@@ -22,6 +22,14 @@
 <script>
     _386 = { 
         fastLoad:{{ .Site.Params.loadfastload }},
+        onePass:{{ .Site.Params.loadonepass }}, 
+        speedFactor:{{ .Site.Params.loadspeedfactor }}
+    };
+
+    // Free updated script to get the actual year !! no more document.write or stuff!!
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
 </script>
 {{- range .Site.Params.customJS }}
 <script src="{{ . | relURL }}"></script>
