@@ -15,11 +15,10 @@
         <hr class="soften">
         <p></p>
         <h1>{{ i18n "postslist" }}</h1>
+        <br/>
         <ul>
             {{ range first 10 .Site.RegularPages }}
-            {{ if eq .Type "post" }}
-            <li><a href="{{ .Permalink }}">{{ .Date.Format "2006-01-02" }} | {{ .Title }}</a></li>
-            {{ end }}
+            <li><a href="{{ .Permalink }}">{{ .Title }} | {{.Date.Format "02 January 2006"}}</a></li>
             {{ end }}
         </ul>
     </div>

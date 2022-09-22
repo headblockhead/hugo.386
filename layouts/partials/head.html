@@ -1,5 +1,14 @@
 <head>
-    <title>{{ .Site.Title }}</title>
+    <title>{{if eq .Site.Title .Page.Title}}
+        {{else}}
+        {{ .Site.Title }} |
+        {{end}}
+        {{.Page.Title}}
+        {{if eq .Page.Description ""}}
+        {{else}}
+        | {{.Date.Format "02 January 2006"}}
+        {{end}}
+    </title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +17,5 @@
     <meta name="description"
         content="{{if not .Params.description}}{{ .Site.Params.mainpagedesc }}{{end}}{{ .Params.description }}" />
     <link rel="icon" href="{{ .Site.BaseURL }}/favicon.ico">
-    <link rel="canonical" href="{{ .Site.BaseURL }}">
-    {{/* Don't ask why it's like this. This original theme is a mess... */}}
-    <!-- <noscript><style>body { visibility: visible }</style></noscript> -->
+    <!-- <link rel="canonical" href="{{ .Site.BaseURL }}"> -->
 </head>

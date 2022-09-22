@@ -5,7 +5,7 @@ other = "Home"
 other = "Posts"
 
 [postslist]
-other = "Blog posts"
+other = "Most Recent Blog Posts"
 
 [categories]
 other = "Categories"
