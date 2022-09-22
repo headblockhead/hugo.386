@@ -1,18 +1,16 @@
-<!-- <link rel="stylesheet" href="{{ "css/bootstrap.css" | relURL }}"> -->
-<!-- <link rel="stylesheet" href="{{ "css/bootstrap-responsive.css" | relURL }}"> -->
-<!-- <link rel="stylesheet" href="{{ "css/style.css" | relURL }}"> -->
+<link rel="preload" href="/css/fonts/Fixedsys500c.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="preload" href="{{ "css/bootstrap.css" | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
+<link rel="stylesheet" href="{{ "css/bootstrap.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/bootstrap-responsive.css" | relURL }}">
+
+
+<!-- <link rel="preload" href="{{ "css/bootstrap.css" | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
     <link rel="stylesheet" href="{{ "css/bootstrap.css" | relURL }}">
-</noscript>
+</noscript> -->
 
-<link rel="preload" href="{{ "css/bootstrap-responsive.css" | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
+<!-- <link rel="preload" href="{{ "css/bootstrap-responsive.css" | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
     <link rel="stylesheet" href="{{ "css/bootstrap-responsive.css" | relURL }}">
-</noscript>
-
-<link rel="preload" href="{{ "css/style.css" | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript>
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
-</noscript>
+</noscript> -->
 
 {{ range .Site.Params.customCSS -}}
 <link rel="stylesheet" href="{{ . | relURL }}">

@@ -15,7 +15,7 @@
         <hr class="soften">
         <p></p>
         <h1>{{ i18n "postslist" }}</h1>
-        <br/>
+        <br />
         <ul>
             {{ range first 10 .Site.RegularPages }}
             <li><a href="{{ .Permalink }}">{{ .Title }} | {{.Date.Format "02 January 2006"}}</a></li>
