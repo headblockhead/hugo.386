@@ -1,11 +1,13 @@
 <head>
-    <title>{{if eq .Site.Title .Page.Title}}
+    <title>
+        {{if eq .Site.Title .Page.Title}}
         {{else}}
         {{ .Site.Title }} |
         {{end}}
+
         {{.Page.Title}}
-        {{if eq .Page.Description ""}}
-        {{else}}
+
+        {{ if .Params.isBlogPage}}
         | {{.Date.Format "02 January 2006"}}
         {{end}}
     </title>

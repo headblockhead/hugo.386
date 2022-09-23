@@ -2,7 +2,7 @@
 
 <div class="row-fluid navmargin">
     <div class="page-header">
-        <h1>{{ .Title }} - Written: {{.Date.Format "02 January 2006"}}
+        <h1>{{ .Title }}{{if .Params.isBlogPage}} - Written: {{.Date.Format "02 January 2006"}}{{end}}
         </h1>
     </div>
     <p class="lead">{{ .Params.description }}</p>
