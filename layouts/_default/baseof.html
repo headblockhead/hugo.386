@@ -2,6 +2,7 @@
 <html lang="{{ .Site.Language.Lang }}">
 {{- partial "head.html" . -}}
 
+{{- partial "scripts.html" . -}}
 
 <body>
     {{- partial "header.html" . -}}
@@ -12,6 +13,5 @@
     <!-- This second close div tag is necercary because this theme is painful -->
     {{- partial "footer.html" . -}}
 </body>
-{{- partial "scripts.html" . -}}
 
 </html>
