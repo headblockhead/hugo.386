@@ -6,6 +6,22 @@
         </h1>
     </div>
     <p class="lead">{{ .Params.description }}</p>
+    <div class="lead">
+        <!-- If there are no tags, don't show the tags list. -->
+        {{ if .Params.tags }}
+        <h3>Tags:
+            {{ range .Params.tags }}
+            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </h3>
+        {{ end }}
+        {{ if .Params.categories }}
+        <h3>Categories: {{ range .Params.categories }}
+            <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </h3>
+        {{ end }}
+    </div>
     {{ .Content }}
     <!-- <h4><a href="{{ .Site.BaseURL }}">{{ i18n "backtohome" }}</a></h4> -->
 </div>
