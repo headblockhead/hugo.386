@@ -9,21 +9,21 @@
     <div class="lead">
         <!-- If there are no tags, don't show the tags list. -->
         {{ if .Params.tags }}
-        <h3>Tags:
+        <b>Tags:
             {{ range .Params.tags }}
             <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
             {{ end }}
-        </h3>
+        </b>
         {{ end }}
+        <br/>
         {{ if .Params.categories }}
-        <h3>Categories: {{ range .Params.categories }}
+        <b>Categories: {{ range .Params.categories }}
             <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
             {{ end }}
-        </h3>
+        </b>
         {{ end }}
     </div>
     {{ .Content }}
-    <!-- <h4><a href="{{ .Site.BaseURL }}">{{ i18n "backtohome" }}</a></h4> -->
 </div>
 
 {{ end }}

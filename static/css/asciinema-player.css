@@ -173,13 +173,13 @@
   font-style: italic;
 }
 .asciinema-terminal.font-small {
-  font-size: 18px;
+  font-size: 10px;
 }
 .asciinema-terminal.font-medium {
-  font-size: 24px;
+  font-size: 16px;
 }
 .asciinema-terminal.font-big {
-  font-size: 30px;
+  font-size: 22px;
 }
 .asciinema-player .control-bar {
   width: 100%;
