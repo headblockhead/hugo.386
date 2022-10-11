@@ -2,16 +2,11 @@
 
 <!-- If we need to add asciinema css, do it. -->
 {{ if .Params.asciinema }}
-    <!-- Asciinema CSS critical https://web.dev/defer-non-critical-css/ -->
-    <style type="text/css">
-        
-    </style>
-
     <!-- Asciinema CSS non-critical https://web.dev/defer-non-critical-css/ -->
-    <link rel="preload" href="/css/asciinema-player.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
+    <!-- <link rel="preload" href="/css/asciinema-player.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript> -->
         <link rel="stylesheet" href="/css/asciinema-player.css">
-    </noscript>
+    <!-- </noscript> -->
 {{ end }}
 
 <!-- Bootstrap CSS critical https://web.dev/defer-non-critical-css/ -->
