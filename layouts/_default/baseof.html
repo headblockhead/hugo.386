@@ -5,10 +5,6 @@
 {{- partial "scripts.html" . -}}
 
 <body>
-    <!-- If we need to add asciinema js, do it. -->
-    {{ if .Params.asciinema }}
-    <script src="/js/asciinema-player.js"></script>
-    {{ end }}
     {{- partial "header.html" . -}}
     <div id="content" class="container">
         {{- block "main" . }}{{- end }}
