@@ -1,0 +1,20 @@
+<p id="demo">
+</p>
+<script>
+    AsciinemaPlayer.create("/asciicasts/{{ with .Get "key" | safeURL}}{{ . }}{{ end }}.cast", document.getElementById('demo'), {
+        cols: "{{ if .Get "cols" }}{{ .Get "cols" }}{{ else }}640{{ end }}",
+        rows: "{{ if .Get "rows" }}{{ .Get "rows" }}{{ else }}10{{ end }}",
+        {{ if .Get "autoplay" }}autoPlay: "{{ .Get "autoplay" }}",{{ end }}
+        {{ if .Get "preload" }}preload: "{{ .Get "preload" }}",{{ end }}
+        {{ if .Get "loop" }}loop: "{{ .Get "loop" }}",{{ end }}
+        startAt: "{{ if .Get "start-at" }}{{ .Get "start-at" }}{{ else }}0{{ end }}",
+        speed: "{{ if .Get "speed" }}{{ .Get "speed" }}{{ else }}1{{ end }}",
+        {{ if .Get "idle-time-limit" }}idleTimeLimit: "{{ .Get "idle-time-limit" }}",{{ end }}
+        {{ if .Get "theme" }}theme: "{{ .Get "theme" | safeURL }}",{{ end }}
+        {{ if .Get "poster" }}poster: "{{ .Get "poster" | safeURL }}",{{ end }}
+        {{ if .Get "fit" }}fit: "{{ .Get "fit" | safeURL }}",{{ end }}
+        {{ if .Get "font-size" }}terminalFontSize: "{{ .Get "font-size" }}",{{ end }}
+        {{ if .Get "font-family" }}terminalFontFamily: "{{ .Get "font-family" | safeURL }}",{{ end }}
+        {{ if .Get "line-height" }}terminalLineHeight: "{{ .Get "line-height" | safeURL }}",{{ end }}
+    });
+</script>
