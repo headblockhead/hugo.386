@@ -1,0 +1,156 @@
+.asciinema-theme-386 .asciinema-terminal {
+    color: #f8f8f2;
+    /* default text color */
+    background-color: #272822;
+    /* terminal background color */
+    border-color: #272822;
+}
+
+.asciinema-theme-386 .fg-bg {
+    /* inverse for default text color */
+    color: #272822;
+}
+
+.asciinema-theme-386 .bg-fg {
+    /* inverse for terminal background color */
+    background-color: #f8f8f2;
+}
+
+.asciinema-theme-386 .fg-0 {
+    color: #272822;
+}
+
+.asciinema-theme-386 .bg-0 {
+    background-color: #272822;
+}
+
+.asciinema-theme-386 .fg-1 {
+    color: #f92672;
+}
+
+.asciinema-theme-386 .bg-1 {
+    background-color: #f92672;
+}
+
+.asciinema-theme-386 .fg-2 {
+    color: #a6e22e;
+}
+
+.asciinema-theme-386 .bg-2 {
+    background-color: #a6e22e;
+}
+
+.asciinema-theme-386 .fg-3 {
+    color: #f4bf75;
+}
+
+.asciinema-theme-386 .bg-3 {
+    background-color: #f4bf75;
+}
+
+.asciinema-theme-386 .fg-4 {
+    color: #66d9ef;
+}
+
+.asciinema-theme-386 .bg-4 {
+    background-color: #66d9ef;
+}
+
+.asciinema-theme-386 .fg-5 {
+    color: #ae81ff;
+}
+
+.asciinema-theme-386 .bg-5 {
+    background-color: #ae81ff;
+}
+
+.asciinema-theme-386 .fg-6 {
+    color: #a1efe4;
+}
+
+.asciinema-theme-386 .bg-6 {
+    background-color: #a1efe4;
+}
+
+.asciinema-theme-386 .fg-7 {
+    color: #f8f8f2;
+}
+
+.asciinema-theme-386 .bg-7 {
+    background-color: #f8f8f2;
+}
+
+.asciinema-theme-386 .fg-8 {
+    color: #75715e;
+}
+
+.asciinema-theme-386 .bg-8 {
+    background-color: #75715e;
+}
+
+.asciinema-theme-386 .fg-9 {
+    color: #f92672;
+}
+
+.asciinema-theme-386 .bg-9 {
+    background-color: #f92672;
+}
+
+.asciinema-theme-386 .fg-10 {
+    color: #a6e22e;
+}
+
+.asciinema-theme-386 .bg-10 {
+    background-color: #a6e22e;
+}
+
+.asciinema-theme-386 .fg-11 {
+    color: #f4bf75;
+}
+
+.asciinema-theme-386 .bg-11 {
+    background-color: #f4bf75;
+}
+
+.asciinema-theme-386 .fg-12 {
+    color: #66d9ef;
+}
+
+.asciinema-theme-386 .bg-12 {
+    background-color: #66d9ef;
+}
+
+.asciinema-theme-386 .fg-13 {
+    color: #ae81ff;
+}
+
+.asciinema-theme-386 .bg-13 {
+    background-color: #ae81ff;
+}
+
+.asciinema-theme-386 .fg-14 {
+    color: #a1efe4;
+}
+
+.asciinema-theme-386 .bg-14 {
+    background-color: #a1efe4;
+}
+
+.asciinema-theme-386 .fg-15 {
+    color: #f9f8f5;
+}
+
+.asciinema-theme-386 .bg-15 {
+    background-color: #f9f8f5;
+}
+
+.asciinema-theme-386 .fg-8,
+.asciinema-theme-386 .fg-9,
+.asciinema-theme-386 .fg-10,
+.asciinema-theme-386 .fg-11,
+.asciinema-theme-386 .fg-12,
+.asciinema-theme-386 .fg-13,
+.asciinema-theme-386 .fg-14,
+.asciinema-theme-386 .fg-15 {
+    font-weight: bold;
+}
