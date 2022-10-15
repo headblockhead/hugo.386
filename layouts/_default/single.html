@@ -6,6 +6,11 @@
         </h1>
     </div>
     <p class="lead">{{ .Params.description }}</p>
+    <!-- <div class="lead">
+        {{ if .Params.author }}
+        <b>Author: {{ .Params.author }}</b>
+        {{ end }}
+    </div> -->
     <div class="lead">
         <!-- If there are no tags, don't show the tags list. -->
         {{ if .Params.tags }}
@@ -23,6 +28,11 @@
         </b>
         {{ end }}
     </div>
+    {{ if .Params.draft}}
+    <div class="lead">
+        This page is work-in-progress! ⌛ Please mind the gap between the train and the platform edge. 🚧
+    </div>
+    {{end}}
     {{ .Content }}
 </div>
 
