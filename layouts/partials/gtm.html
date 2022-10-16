@@ -20,7 +20,6 @@
 		ad_storage: 'denied',
 		analytics_storage: 'denied',
 		wait_for_update: 500,
-		// region: ['US-CA', 'FI']
 	});
 </script>
 
@@ -30,13 +29,11 @@
 			ad_storage: 'granted',
 			analytics_storage: 'granted'
 		});
+		setCookie('cookie-consent-completed-outcome', 'true', 365);
 		console.log("You have chosen to consent to cookies.");
 	}
 	function doNotConsentToCookies() {
-		gtag('consent', 'update', {
-			ad_storage: 'denied',
-			analytics_storage: 'denied'
-		});
+		setCookie('cookie-consent-completed-outcome', 'false', 365);
 		console.log("You have chosen not to consent to cookies.");
 	}
 	</script>
