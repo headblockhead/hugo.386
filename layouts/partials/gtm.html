@@ -1,0 +1,48 @@
+<!-- Extra GoogleTagManager data to be tracked -->
+<script>
+	window.dataLayer = window.dataLayer || [];
+	window.dataLayer.push({
+		'pagePublishDate': '{{ .PublishDate.Format "2006-01-02" }}',
+		'pageEstimatedReadingTimeMinutes': {{ .ReadingTime }},
+		'pageEstimatedReadingTimeSeconds': {{- $readTime := mul (div (countwords .Content) 220.0) 60 }}{{- math.Round $readTime}},
+		'pageWordCount': {{- .WordCount }},
+		'pageID': '{{ with .File }}{{ .UniqueID }}{{ end }}',
+		'pageTitle': '{{ .LinkTitle }}',
+		{{- if .Params.categories }}
+			'pageCategories':'{{ delimit .Params.categories "|" }}', 
+		{{- end }}
+		{{- if .Params.tags}}
+			'pageTags':'{{ delimit .Params.tags "|" }}', 
+		{{- end }} 
+	});
+	function gtag() { window.dataLayer.push(arguments); }
+	gtag('consent', 'default', {
+		ad_storage: 'denied',
+		analytics_storage: 'denied',
+		wait_for_update: 500,
+		// region: ['US-CA', 'FI']
+	});
+</script>
+
+<script>
+	function consentToCookies() {
+		gtag('consent', 'update', {
+			ad_storage: 'granted',
+			analytics_storage: 'granted'
+		});
+		console.log("You have chosen to consent to cookies.");
+	}
+	function doNotConsentToCookies() {
+		gtag('consent', 'update', {
+			ad_storage: 'denied',
+			analytics_storage: 'denied'
+		});
+		console.log("You have chosen not to consent to cookies.");
+	}
+	</script>
+<!-- Main GoogleTagManager code -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{ .Site.Params.gtm_id }}');</script>

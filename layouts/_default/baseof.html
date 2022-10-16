@@ -12,4 +12,9 @@
     {{- partial "footer.html" . -}}
 </body>
 
+{{ if .Site.Params.gtm_id}}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.gtm_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {{- partial "cookies.html" . -}}
+{{ end }}
+
 </html>
