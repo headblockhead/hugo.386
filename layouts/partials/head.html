@@ -13,4 +13,9 @@
     <meta name="description"
         content="{{if not .Params.description}}{{ .Site.Params.mainpagesubtitle }}{{end}}{{ .Params.description }}" />
     <link rel="icon" href="/favicon.svg">
+
+    <!-- Google Analytics -->
+    {{ template "_internal/google_analytics.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
+    
 </head>
