@@ -19,7 +19,7 @@
         <ul>
             {{ range first 10 .Site.RegularPages }}
             {{if .Params.isBlogPage}}
-            <li><a href="{{ .Permalink }}">{{ .Title }} | {{.Date.Format "02 January 2006"}}</a></li>
+            <li><a href="{{ .RelPermalink }}">{{ .Title }} | {{.Date.Format "02 January 2006"}}</a></li>
             {{end}}
             {{ end }}
         </ul>
