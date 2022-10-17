@@ -2,7 +2,7 @@
 
 <div class="row-fluid navmargin">
     <div class="page-header">
-        <h1>{{ .Title }}{{if .Params.isBlogPage}} - Written: {{.Date.Format "02 January 2006"}}{{end}}
+        <h1>{{ .Title }}{{if .Params.blogpage}} - Written: {{.Date.Format "02 January 2006"}}{{end}}
         </h1>
     </div>
     <p class="lead">{{ .Params.description }}</p>
@@ -11,6 +11,7 @@
         <b>Author: {{ .Params.author }}</b>
         {{ end }}
     </div> -->
+    {{ if or .Params.tags .Params.categories }}
     <div class="lead">
         <!-- If there are no tags, don't show the tags list. -->
         {{ if .Params.tags }}
@@ -28,6 +29,7 @@
         </b>
         {{ end }}
     </div>
+    {{end}}
     {{ if .Params.draft}}
     <div class="lead">
         This page is work-in-progress! ⌛ Please mind the gap between the train and the platform edge. 🚧

@@ -2,8 +2,14 @@
 
 <!-- If we need to add asciinema css, do it. -->
 {{ if .Params.asciinema }}
-        <link rel="stylesheet" href="/css/asciinema-player.css">
-        <link rel="stylesheet" type="text/css" href="/css/asciinema-theme-386.css" />
+        <link rel="preload" href="/css/asciinema-player.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="/css/asciinema-player.css">
+        </noscript>
+        <link rel="preload" href="/css/asciinema-theme-386.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="/css/asciinema-theme-386.css">
+        </noscript>
 {{ end }}
 
 <!-- Bootstrap CSS page-load critical https://web.dev/defer-non-critical-css/ -->
@@ -17,9 +23,15 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
 </noscript>
 
-<link rel="stylesheet" href="{{ "/css/bootstrap-responsive.css" | relURL }}">
+<link rel="preload" href="/css/bootstrap-responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="/css/bootstrap-responsive.css">
+</noscript>
 
-<link rel="stylesheet" href="{{ "/css/cookies.css" | relURL }}">
+<link rel="preload" href="/css/cookies.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="/css/cookies.css">
+</noscript>
 
 {{ range .Site.Params.customCSS -}}
     <link rel="stylesheet" href="{{ . | relURL }}">

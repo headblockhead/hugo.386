@@ -1,18 +1,19 @@
-<ul id="cookie-consent-box" style="display: none" class="cookie-consent-box nav-list nav">
+<div id="cookie-consent-box" style="display: none" class="cookie-consent-box nav-list nav">
     <div class="cookie-consent-text-container">
-        <p><u>Hi there!</u></p>
-        <p>Sorry to interrupt, but I use Google Analytics Cookies to gather data from my site. Is that OK with
-            you?</p>
+        <b><u>Hi there!</u></b>
+        <br />
+        <b>Sorry to interrupt, but I use Google Analytics Cookies to gather data from my site. Is that OK with
+            you?</b>
         <div class="cookie-consent-button-container">
-            <li class="cookie-consent-button">
-                <a onclick="consentToCookies();hideCookieBox()" class="cookie-consent-button-accept">Accept</a>
-            </li>
-            <li class="cookie-consent-button">
-                <a onclick="doNotConsentToCookies();hideCookieBox()" class="cookie-consent-button-decline">Decline</a>
-            </li>
+            <div class="cookie-consent-button">
+                <p onclick="consentToCookies();hideCookieBox()" class="cookie-consent-button-accept">Accept</p>
+            </div>
+            <div class="cookie-consent-button">
+                <p onclick="doNotConsentToCookies();hideCookieBox()" class="cookie-consent-button-decline">Decline</p>
+            </div>
         </div>
     </div>
-</ul>
+</div>
 <script>
     function setCookie(name, value, days) {
         var expires = "";

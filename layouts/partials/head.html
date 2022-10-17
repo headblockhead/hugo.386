@@ -1,6 +1,7 @@
 <head>
     <title>
-        {{if eq .Site.Title .Page.Title}}{{else}}{{ .Site.Title }} | {{end}}{{.Page.Title}}{{ if .Params.isBlogPage}} | {{.Date.Format "02 January 2006"}}{{end}}
+        {{if eq .Site.Title .Page.Title}}{{else}}{{ .Site.Title }} | {{end}}{{.Page.Title}}{{ if .Params.blogpage}} |
+        {{.Date.Format "02 January 2006"}}{{end}}
     </title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
@@ -8,21 +9,21 @@
 
     <!-- Don't higlight supposed phone numbers as links -->
     <meta name="format-detection" content="telephone=no" />
-    
+
     <!-- Mobile browser header color -->
     <meta name="theme-color" content="#bbb" />
 
     <!-- Apple Safari Stuff -->
-    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> --> <!-- If this is enabled, IOS will treat this webisite as if it is a standalone app. Any links opened, even inter-site links will be treated as a website linked to by the 'app'. -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <!-- If this is enabled, IOS will treat this webisite as if it is a standalone app. Any links opened, even inter-site links will be treated as a website linked to by the 'app'. -->
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="500x500" href="/apple-touch-icon.png">
 
     <meta name="description"
-        content="{{if not .Params.description}}{{ .Site.Params.mainpagesubtitle }}{{end}}{{ .Params.description }}" 
-    />
-    
+        content="{{if not .Params.description}}{{ .Site.Params.mainpagesubtitle }}{{end}}{{ .Params.description }}" />
+
     <link rel="icon" href="/favicon.svg">
 
 </head>
