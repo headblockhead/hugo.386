@@ -28,11 +28,6 @@
     <link rel="stylesheet" href="/css/bootstrap-responsive.css">
 </noscript>
 
-<link rel="preload" href="/css/cookies.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-    <link rel="stylesheet" href="/css/cookies.css">
-</noscript>
-
 {{ range .Site.Params.customCSS -}}
     <link rel="stylesheet" href="{{ . | relURL }}">
 {{- end }}
