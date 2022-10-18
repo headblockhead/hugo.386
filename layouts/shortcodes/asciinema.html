@@ -17,4 +17,9 @@
         {{ if .Get "font-family" }}terminalFontFamily: "{{ .Get "font-family" | safeURL }}",{{ end }}
         {{ if .Get "line-height" }}terminalLineHeight: "{{ .Get "line-height" | safeURL }}",{{ end }}
     });
+    // Make the player keyboard accessible
+    player = document.getElementsByClassName('asciinema-player-wrapper');
+    for (var i = 0; i < player.length; i++) {
+        player[i].setAttribute('tabindex', '0');
+    }
 </script>
