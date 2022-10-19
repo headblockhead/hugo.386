@@ -3,13 +3,7 @@
 <!-- If we need to add asciinema css, do it. -->
 {{ if .Params.asciinema }}
         <link rel="preload" href="/css/asciinema-player.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript>
-            <link rel="stylesheet" href="/css/asciinema-player.css">
-        </noscript>
         <link rel="preload" href="/css/asciinema-theme-386.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript>
-            <link rel="stylesheet" href="/css/asciinema-theme-386.css">
-        </noscript>
 {{ end }}
 
 <!-- Bootstrap CSS page-load critical https://web.dev/defer-non-critical-css/ -->
@@ -19,29 +13,17 @@
 
 <!-- Bootstrap CSS non-critical https://web.dev/defer-non-critical-css/ -->
 <link rel="preload" href="/css/bootstrap.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-    <link rel="stylesheet" href="/css/bootstrap.css">
-</noscript>
-
 <link rel="preload" href="/css/bootstrap-responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-    <link rel="stylesheet" href="/css/bootstrap-responsive.css">
-</noscript>
 
 {{ range .Site.Params.customCSS -}}
     <link rel="stylesheet" href="{{ . | relURL }}">
 {{- end }}
 
-<!-- If we need to add asciinema js, do it. -->
-{{ if .Params.asciinema }}
-<script src="{{ "/js/asciinema-player.js" | relURL }}"></script>
-{{ end }}
-
 {{ if .Params.sharebutton }}
 <style>
-   .xclose{position:absolute;top:0;right:0;padding:5px 10px;cursor:pointer;color:red;background-color:rgba(0,0,0,.1);font-size:20px;border:none;outline:none}.share-popup-box{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:130px;z-index:110}@media (max-width: 767px){.share-popup-box{width:auto;height:auto}}.share-popup-box-text-container{color:#000}.share-option-button{border:none;color:#fff;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:0;cursor:pointer}.share-option-button-whatsapp{background-color:#25D366;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-whatsapp:hover{background-color:#14C255}.share-option-button-twitter{background-color:#1DA1F2;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-twitter:hover{background-color:#0C90E1}.share-option-button-facebook{background-color:#4267B2;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-facebook:hover{background-color:#3156A1}.share-option-button-pintrest{background-color:#E60023;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-pintrest:hover{background-color:#D50012}.share-option-button-linkedin{background-color:#0077B5;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-linkedin:hover{background-color:#0066A4}@keyframes fadeOut{from{opacity:1}to{opacity:0}}@-webkit-keyframes fadeOut{from{opacity:1}to{opacity:0}}.fade-out{animation:fadeOut .3s;opacity:0}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadeIn{from{opacity:0}to{opacity:1}}.fade-in{animation:fadeIn .3s;opacity:1}button{margin:0;padding:5px 10px}.sharecontainer{display:block;margin-bottom:10px}
+.xclose{position:absolute;top:0;right:0;padding:4.5px 9px;cursor:pointer;color:#fff;background-color:rgba(255,0,0,0.8);font-size:23px;border:none;outline:none}.share-popup-box{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:130px;z-index:110}@media (max-width: 767px){.share-popup-box{width:auto;height:auto}}.share-popup-box-text-container{color:#000}.share-option-button{border:none;color:#fff;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:0;cursor:pointer}.share-option-button-whatsapp{background-color:#25D366;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-whatsapp:hover{background-color:#14C255}.share-option-button-twitter{background-color:#1DA1F2;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-twitter:hover{background-color:#0C90E1}.share-option-button-facebook{background-color:#4267B2;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-facebook:hover{background-color:#3156A1}.share-option-button-pintrest{background-color:#E60023;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-pintrest:hover{background-color:#D50012}.share-option-button-linkedin{background-color:#0077B5;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-linkedin:hover{background-color:#0066A4}@keyframes slideout{from{top:50%}to{top:130%}}@-webkit-keyframes slideout{from{top:50%}to{top:130%}}.fade-out{animation:slideout .3s;top:130%}@keyframes slidein{from{top:130%}to{top:50%}}@-webkit-keyframes slidein{from{top:130%}to{top:50%}}.fade-in{animation:slidein .3s;top:50%}button{margin:0;padding:5px 10px}.sharecontainer{display:block;margin-bottom:10px}
 </style>
-<div style="opacity:0;display:none" id="share-popup-box" class="share-popup-box nav-list nav">
+<div style="top:130%;display:none" id="share-popup-box" class="share-popup-box nav-list nav">
     <b class="xclose" onclick="hideShareBox()">X</b>
     <div class="share-popup-box-text-container">
         <b><u>Share</u></b>
@@ -67,60 +49,31 @@
     </div>
 </div>
 <script>
-    function hideShareBox() {
-        var element = document.getElementById('share-popup-box');
-        element.classList.remove('fade-in');
-        element.style.opacity = 0;
-        element.classList.add('fade-out');
-        setTimeout(function () {
-            element.style.display = "none";
-        }, 300);
-    }
-    function showShareBox() {
-        var element = document.getElementById('share-popup-box');
-        element.classList.remove('fade-out');
-        element.style.opacity = 1;
-        element.style.display = "block";
-        element.classList.add('fade-in');
-    }
-    function openWhatsappShare() {
-        var url = window.location.href;
-        var text = "Check out this {{ .Params.sharedescription }} I found on " + url;
-        var whatsapp_url = "https://wa.me/?text=" + text;
-        window.open(whatsapp_url, '_blank');
-    }
-    function openTwitterShare() {
-        var url = window.location.href;
-        var text = "Check out this {{ .Params.sharedescription }} I found on " + url;
-        var twitter_url = "https://twitter.com/intent/tweet?text=" + text;
-        window.open(twitter_url, '_blank');
-    }
-    function openFacebookShare() {
-        var url = window.location.href;
-        var text = "Check out this {{ .Params.sharedescription }} I found on " + url;
-        var facebook_url = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-        window.open(facebook_url, '_blank');
-    }
-    function openPintrestShare() {
-        var url = window.location.href;
-        var text = "Check out this {{ .Params.sharedescription }} I found on " + url;
-        var pintrest_url = "https://pinterest.com/pin/create/button/?url=" + url + "&description=" + text;
-        window.open(pintrest_url, '_blank');
-    }
-    function openLinkedinShare() {
-        var url = window.location.href;
-        var text = "Check out this {{ .Params.sharedescription }} I found on " + url;
-        var linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + text;
-        window.open(linkedin_url, '_blank');
-    }
+    function hideShareBox() { var e = document.getElementById("share-popup-box"); e.classList.remove("fade-in"), e.style.top = "130%", e.classList.add("fade-out"), setTimeout(function () { e.style.display = "none" }, 300) } function showShareBox() { var e = document.getElementById("share-popup-box"); e.classList.remove("fade-out"), e.style.top = "50%", e.style.display = "block", e.classList.add("fade-in") }
+    var url = window.location.href;
+    var text = "Check out this {{ .Params.sharedescription }} I found on " + url;
+    var whatsapp_url = "https://wa.me/?text=" + text;
+    var twitter_url = "https://twitter.com/intent/tweet?text=" + text;
+    var facebook_url = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+    var pintrest_url = "https://pinterest.com/pin/create/button/?url=" + url + "&description=" + text;
+    var linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + text;
+    function openWhatsappShare() { window.open(whatsapp_url, "_blank") } function openTwitterShare() { window.open(twitter_url, "_blank") } function openFacebookShare() { window.open(facebook_url, "_blank") } function openPintrestShare() { window.open(pintrest_url, "_blank") } function openLinkedinShare() { window.open(linkedin_url, "_blank") }
 </script>
 {{ end }}
+
+<noscript>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.css">
+    {{ if .Params.asciinema }}
+    <link rel="stylesheet" href="/css/asciinema-player.css">
+    <link rel="stylesheet" href="/css/asciinema-theme-386.css">
+    {{end}}
+</noscript>
 
 <!-- Google Tag Manager -->
 {{ if .Site.Params.gtm_id}}
 {{- partial "gtm.html" . }}
 {{ end }}
-
 
 <!-- If we need to add threejs, do it. -->
 <!-- Polyfill for Ecmascript. -->
@@ -135,3 +88,8 @@
     }
 </script>
 {{end}}
+
+<!-- If we need to add asciinema js, do it. -->
+{{ if .Params.asciinema }}
+<script src="{{ "/js/asciinema-player.js" | relURL }}"></script>
+{{ end }}
