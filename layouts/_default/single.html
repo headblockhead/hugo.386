@@ -35,6 +35,11 @@
         This page is work-in-progress! ⌛ Please mind the gap between the train and the platform edge. 🚧
     </div>
     {{end}}
+    {{if .Params.sharebutton }}
+        <div class="lead">
+        <button class="share" onclick="showShareBox()">Share this {{ .Params.sharenoun }}!</button>
+    </div>
+    {{end}}
     {{ .Content }}
 </div>
 

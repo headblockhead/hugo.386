@@ -8,3 +8,12 @@
         {{ with .Site.Params.github }}<a href="{{ . }}">GitHub</a> {{ end }}
     </p>
 </footer>
+
+<!-- For every b tag with the class of header-link on the page, make it keyboard focusable -->
+<!-- This is placed here so it is executed last - after the page has loaded. -->
+<script>
+    var headerLinks = document.getElementsByClassName('header-link');
+    for (var i = 0; i < headerLinks.length; i++) {
+        headerLinks[i].setAttribute("tabindex", "0");
+    }
+</script>
