@@ -65,7 +65,7 @@
     var pintrest_url = "https://pinterest.com/pin/create/button/?url=" + url + "&description=" + text;
     var linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + text;
     var reddit_url = "https://www.reddit.com/submit?url=" + url + "&title=" + text_no_url;
-    var email_url = "mailto:?subject=" + text + "&body=" + url;
+    var email_url = "mailto:?subject=" + text_no_url + "&body=" + url;
     function openWhatsappShare() { window.open(whatsapp_url, "_blank") }
      function openTwitterShare() { window.open(twitter_url, "_blank") }
       function openFacebookShare() { window.open(facebook_url, "_blank") }

@@ -17,10 +17,8 @@
         <h1>{{ i18n "postslist" }}</h1>
         <br />
         <ul>
-            {{ range first 10 .Site.RegularPages }}
-            {{if .Params.blogpage}}
+            {{ range first 10 (where .Site.Pages "Params.blogpage" true) }}
             <li><a href="{{ .RelPermalink }}">{{ .Title }} | {{.Date.Format "02 January 2006"}}</a></li>
-            {{end}}
             {{ end }}
         </ul>
     </div>
