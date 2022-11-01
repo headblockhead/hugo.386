@@ -66,13 +66,13 @@
     var linkedin_url = "https://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + text;
     var reddit_url = "https://www.reddit.com/submit?url=" + url + "&title=" + text_no_url;
     var email_url = "mailto:?subject=" + text_no_url + "&body=" + url;
-    function openWhatsappShare() { window.open(whatsapp_url, "_blank") }
-     function openTwitterShare() { window.open(twitter_url, "_blank") }
-      function openFacebookShare() { window.open(facebook_url, "_blank") }
-       function openPintrestShare() { window.open(pintrest_url, "_blank") }
-        function openLinkedinShare() { window.open(linkedin_url, "_blank") }
-        function openRedditShare() { window.open(reddit_url, "_blank") }
-        function openEmailShare() { window.open(email_url, "_blank") }
+    function openWhatsappShare() { dataLayer.push({ 'event': 'share-button-pressed-whatsapp' }); window.open(whatsapp_url, "_blank") }
+     function openTwitterShare() { dataLayer.push({ 'event': 'share-button-pressed-twitter' }); window.open(twitter_url, "_blank") }
+      function openFacebookShare() { dataLayer.push({ 'event': 'share-button-pressed-facebook' }); window.open(facebook_url, "_blank") }
+       function openPintrestShare() { dataLayer.push({ 'event': 'share-button-pressed-pintrest' }); window.open(pintrest_url, "_blank") }
+        function openLinkedinShare() { dataLayer.push({ 'event': 'share-button-pressed-linkedin' }); window.open(linkedin_url, "_blank") }
+        function openRedditShare() { dataLayer.push({ 'event': 'share-button-pressed-reddit' }); window.open(reddit_url, "_blank") }
+        function openEmailShare() { dataLayer.push({ 'event': 'share-button-pressed-email' }); window.open(email_url, "_blank") }
 </script>
 {{ end }}
 
