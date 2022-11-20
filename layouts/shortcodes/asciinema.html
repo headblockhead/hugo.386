@@ -1,7 +1,7 @@
 <p id="{{ with .Get "uuid"}}{{ . }}{{ end }}">
 </p>
 <script>
-    AsciinemaPlayer.create("{{ .Page.RelPermalink }}/{{ with .Get "key" | safeURL}}{{ . }}{{ end }}.cast", document.getElementById('{{ with .Get "uuid"}}{{ . }}{{ end }}'), {
+    AsciinemaPlayer.create("{{ .Page.RelPermalink }}{{ with .Get "key" | safeURL}}{{ . }}{{ end }}.cast", document.getElementById('{{ with .Get "uuid"}}{{ . }}{{ end }}'), {
         cols: "{{ if .Get "cols" }}{{ .Get "cols" }}{{ else }}640{{ end }}",
         rows: "{{ if .Get "rows" }}{{ .Get "rows" }}{{ else }}10{{ end }}",
         {{ if .Get "autoplay" }}autoPlay: "{{ .Get "autoplay" }}",{{ end }}
