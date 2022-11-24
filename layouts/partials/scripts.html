@@ -19,6 +19,43 @@
     <link rel="stylesheet" href="{{ . | relURL }}">
 {{- end }}
 
+<noscript>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.css">
+    {{ if .Params.asciinema }}
+    <link rel="stylesheet" href="/css/asciinema-player.css">
+    <link rel="stylesheet" href="/css/asciinema-theme-386.css">
+    {{end}}
+</noscript>
+
+<!-- Google Tag Manager -->
+{{ if .Site.Params.gtm_id}}
+{{- partial "gtm.html" . }}
+{{ end }}
+
+<!-- If we need to add threejs, do it. -->
+<!-- Polyfill for Ecmascript. -->
+<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
+{{ if .Params.threejs }}
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.145.0/build/three.module.js"
+        }
+    }
+</script>
+{{end}}
+
+<!-- OpenGraph template for social media view. -->
+{{ template "_internal/opengraph.html" . }}
+<meta property="og:image" content="{{.Site.BaseURL}}{{.Site.Params.opengraphimage}}">
+
+<!-- If we need to add asciinema js, do it. -->
+{{ if .Params.asciinema }}
+<script src="{{ "/js/asciinema-player.js" | relURL }}"></script>
+{{ end }}
+
 {{ if .Params.sharebutton }}
 <style>
 .xclose{position:absolute;top:0;right:0;padding:4.5px 9px;cursor:pointer;color:#fff;background-color:rgba(255,0,0,0.8);font-size:23px;border:none;outline:none}.share-popup-box{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:150px;z-index:110}@media (max-width: 767px){.share-popup-box{width:auto;height:auto}}.share-popup-box-text-container{color:#000}.share-option-button{border:none;color:#fff;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:0;cursor:pointer}.share-option-button-whatsapp{background-color:#25D366;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-whatsapp:hover{background-color:#14C255}.share-option-button-twitter{background-color:#1DA1F2;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-twitter:hover{background-color:#0C90E1}.share-option-button-facebook{background-color:#4267B2;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-facebook:hover{background-color:#3156A1}.share-option-button-pintrest{background-color:#E60023;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-pintrest:hover{background-color:#D50012}.share-option-button-linkedin{background-color:#0077B5;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-linkedin:hover{background-color:#0066A4}.share-option-button-reddit{background-color:#FF4500;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-reddit:hover{background-color:#EE3400}.share-option-button-email{background-color:#3a3a3a;border:none;color:#fff;padding:5px 16px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}.share-option-button-email:hover{background-color:#292929}@keyframes slideout{from{top:50%}to{top:130%}}@-webkit-keyframes slideout{from{top:50%}to{top:130%}}.slide-out{animation:slideout .3s;top:130%}@keyframes slidein{from{top:130%}to{top:50%}}@-webkit-keyframes slidein{from{top:130%}to{top:50%}}.slide-in{animation:slidein .3s;top:50%}button{margin:0;padding:5px 10px}.sharecontainer{display:block;margin-bottom:10px}
@@ -74,41 +111,4 @@
         function openRedditShare() { dataLayer.push({ 'event': 'share-button-pressed-reddit' }); window.open(reddit_url, "_blank") }
         function openEmailShare() { dataLayer.push({ 'event': 'share-button-pressed-email' }); window.open(email_url, "_blank") }
 </script>
-{{ end }}
-
-<noscript>
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/bootstrap-responsive.css">
-    {{ if .Params.asciinema }}
-    <link rel="stylesheet" href="/css/asciinema-player.css">
-    <link rel="stylesheet" href="/css/asciinema-theme-386.css">
-    {{end}}
-</noscript>
-
-<!-- Google Tag Manager -->
-{{ if .Site.Params.gtm_id}}
-{{- partial "gtm.html" . }}
-{{ end }}
-
-<!-- If we need to add threejs, do it. -->
-<!-- Polyfill for Ecmascript. -->
-<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-
-{{ if .Params.threejs }}
-<script type="importmap">
-    {
-        "imports": {
-            "three": "https://unpkg.com/three@0.145.0/build/three.module.js"
-        }
-    }
-</script>
-{{end}}
-
-<!-- OpenGraph template for social media view. -->
-{{ template "_internal/opengraph.html" . }}
-<meta property="og:image" content="{{.Site.BaseURL}}{{.Site.Params.opengraphimage}}">
-
-<!-- If we need to add asciinema js, do it. -->
-{{ if .Params.asciinema }}
-<script src="{{ "/js/asciinema-player.js" | relURL }}"></script>
 {{ end }}

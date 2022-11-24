@@ -6,11 +6,6 @@
         </h1>
     </div>
     <p class="lead">{{ .Params.description }}</p>
-    <!-- <div class="lead">
-        {{ if .Params.author }}
-        <b>Author: {{ .Params.author }}</b>
-        {{ end }}
-    </div> -->
     {{ if or .Params.tags .Params.categories }}
     <div class="lead">
         <!-- If there are no tags, don't show the tags list. -->
