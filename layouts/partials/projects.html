@@ -1,0 +1,5 @@
+{{range first 10 ($.Site.GetPage "taxonomyTerm" "projects").Pages }}
+<li>
+    <a href="{{ .RelPermalink }}">{{.Title}}</a>
+</li>
+{{ end }}
