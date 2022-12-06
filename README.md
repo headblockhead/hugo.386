@@ -1,6 +1,9 @@
 # HUGO.386
 HUGO.386 is a port of the [BOOTSTRA.386](https://github.com/kristopolous/BOOTSTRA.386) theme. It has a cool MS-DOS feeling and is ready to be used for blogs. Despite its antique look, the theme is responsive and can be viewed on mobile devices.
 
+## Disclamer:
+This theme is designed to work directly with [my blog](https://headblockhead.com/) and is not designed for use with anyone else's hugo site. Use it at your own risk!
+
 ![Example of Hugo blog with the theme](images/screenshot.png)
 
 ## Installation
