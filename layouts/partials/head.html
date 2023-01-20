@@ -12,20 +12,26 @@
     <!-- Mobile browser header color -->
     <meta name="theme-color" content="#bbb" />
 
-    <!-- Apple Safari Stuff -->
+    <!-- Apple Stuff -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="mask-icon" href="mask.svg" color="#F50080">
+
     <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
-    <!-- If this is enabled, IOS will treat this webisite as if it is a standalone app. Any links opened, even inter-site links will be treated as a website linked to by the 'app'. -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="500x500" href="/apple-touch-icon.png">
+    <!-- If this ^^^ is enabled, IOS will treat this webisite as if it is a standalone app. Any links opened, even inter-site links will be treated as a website linked to by the 'app'. -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" href="/favicon-light.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+
+    <!-- Microsoft Stuff -->
+    <meta name="msapplication-TileColor" content="#f50080">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
     <!-- Google site verification code -->
     <meta name="google-site-verification" content="{{ .Site.Params.googlesiteverification }}" />
 
     <meta name="description"
         content="{{if not .Params.description}}{{ .Site.Params.mainpagesubtitle }}{{end}}{{ .Params.description }}" />
-
-    <link rel="icon" href="/favicon.svg">
-
 </head>
